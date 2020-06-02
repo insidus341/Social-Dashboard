@@ -1,5 +1,8 @@
 import os
 
+app_ip = os.getenv('APP_IP')
+app_port = os.getenv('APP_PORT')
+
 youtube_channel_id = os.getenv('YOUTUBE_CHANNEL_ID')
 youtube_api_key = os.getenv('YOUTUBE_API_KEY')
 
