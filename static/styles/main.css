@@ -1,0 +1,81 @@
+/*  MAIN   */
+
+body {
+    background-color: #0e2148
+}
+
+.wrapper {
+    font-family: 'Open Sans', sans-serif;
+    color: #e3ebfa;
+    position: fixed;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    margin-top: -156px;
+    margin-left: -300px
+}
+
+.fleft {
+    float: left
+}
+
+.fright {
+    float: right
+}
+
+#footer {
+    clear: both
+}
+
+/* CIRCLES */
+
+.circle_container {
+    width: 232px;
+}
+
+.circle_container p.title {
+    text-align: center;
+    position: relative;
+    top: -30px;
+    font-size: 20px;
+}
+
+.circles {
+  margin-bottom: -10px;
+}
+
+.circle {
+  width: 200px;
+  margin: 6px 6px 20px;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.circle canvas {
+  vertical-align: top;
+}
+
+.circle strong {
+  position: absolute;
+  top: 88px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+.circle strong i {
+  font-style: normal;
+  font-size: 0.6em;
+  font-weight: normal;
+}
+
+.circle span {
+  display: block;
+  color: #aaa;
+  margin-top: 12px;
+}
