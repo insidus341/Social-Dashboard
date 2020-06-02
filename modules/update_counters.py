@@ -24,11 +24,7 @@ def get_counter():
             return get_stored_data()
 
         except Exception as e:
-            response = {
-                'error': '429'
-            }
-
-            return response
+            return get_stored_data()
 
     else:
         return get_stored_data()

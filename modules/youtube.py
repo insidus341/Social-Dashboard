@@ -1,16 +1,15 @@
 import requests
+from modules.get_environmentals import youtube_api_key, youtube_channel_id
 
 
 def get_youtube_subscriber_count():
     url = 'https://www.googleapis.com/youtube/v3/channels'
-    channel_id = "UCpjOrUKSGSbXkfmkibKYbZA"
-    api_key = 'AIzaSyBdajJfb2hfdCUqdsTwK8UxOXuXLkcNphE'
 
     request = requests.session()
     request.params = {
         "part": "statistics",
-        "id": channel_id,
-        "key": api_key
+        "id": youtube_channel_id,
+        "key": youtube_api_key
     }
 
     try:
@@ -20,6 +19,7 @@ def get_youtube_subscriber_count():
         return subscriber_count
 
     except Exception as e:
+        print('YouTube API failed')
         raise Exception
 
 

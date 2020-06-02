@@ -1,14 +1,16 @@
 import tweepy
+from modules.get_environmentals import twitter_api_key, twitter_api_token, twitter_api_key_secret, \
+    twitter_api_token_secret, twitter_username
 
 
 def get_twitter_follower_count():
-    auth = tweepy.OAuthHandler('8xIc3c3PeUZr2iaqCNmL7ncBz', '2K1FZt25HOYbLeLDuBUHXDr27RhyN7qplh10umG8EoyMmuJ3Lt')
-    auth.set_access_token('1266351719556005888-EqS3P3C1WzGcSk6rEA1AENocLYmmMG', '8KWRtlsSs5iwyBUJPPcAHqiUrNKCPSH0ZZqb00TKRPrdt')
+    auth = tweepy.OAuthHandler(twitter_api_key, twitter_api_key_secret)
+    auth.set_access_token(twitter_api_token, twitter_api_token_secret)
 
     twitter_api = tweepy.API(auth)
-    user = twitter_api.get_user('jamesvscode')
+    user = twitter_api.get_user(twitter_username)
 
-    id_str = '1266351719556005888'
+    id_str = user.id_str
 
     try:
         response = twitter_api.followers(id_str)
