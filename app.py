@@ -4,7 +4,7 @@ load_dotenv('config.env')
 
 from flask import json, render_template, Flask, request
 from modules.update_counters import get_counter
-from modules.get_environmentals import app_ip, app_port
+from modules.get_environmentals import app_ip, app_port, app_ssl, app_ssl_cert, app_ssl_key
 
 
 app = Flask(__name__)
@@ -20,4 +20,7 @@ def update():
 
 
 if __name__ == '__main__':
-    app.run(app_ip, app_port, debug=False)
+    if app_ssl == 'True':
+        app.run(app_ip, app_port, ssl_context=(app_ssl_cert, app_ssl_key), debug=False)
+    else:
+        app.run(app_ip, app_port, debug=False)
