@@ -3,13 +3,12 @@ import time
 
 from modules.twitter import get_twitter_follower_count
 from modules.youtube import get_youtube_subscriber_count
-
+from modules.get_environmentals import app_root
 
 TIMER_OFFSET = 60
 
 
 def get_counter():
-
     old_counters = get_stored_data()
 
     original_ts = old_counters['last_updated']
@@ -31,7 +30,6 @@ def get_counter():
 
 
 def update_counter():
-
     twitter_followers = None
     youtube_followers = None
 
@@ -53,27 +51,23 @@ def update_counter():
 
 
 def get_stored_data():
-
-    with open("storage/counter_data.json", "r") as file:
+    with open(app_root + "storage/counter_data.json", "r") as file:
         stored_counter_data_json = json.load(file)
 
     return stored_counter_data_json
 
 
 def set_stored_data(counters):
-
-    with open("storage/counter_data.json", "w") as file:
+    with open(app_root + "storage/counter_data.json", "w") as file:
         json.dump(counters, file)
 
 
 def calculate_percentage(current, target):
-
     percent = float(current) / float(target)
     return percent
 
 
 def update_storage(counters, new_counters):
-
     counters['twitter_followers'] = new_counters['twitter_followers']
     counters['youtube_subs'] = new_counters['youtube_subs']
     counters['last_updated'] = new_counters['last_updated']
@@ -89,5 +83,3 @@ def update_storage(counters, new_counters):
     )
 
     set_stored_data(counters)
-
-

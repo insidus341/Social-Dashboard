@@ -2,6 +2,7 @@ import os
 
 app_ip = os.getenv('APP_IP')
 app_port = os.getenv('APP_PORT')
+app_root = os.getenv('APP_ROOT')
 app_ssl = os.getenv('APP_SSL')
 app_ssl_cert = os.getenv('APP_SSL_CERT')
 app_ssl_key = os.getenv('APP_SSL_KEY')

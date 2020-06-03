@@ -1,13 +1,13 @@
 from dotenv import load_dotenv
-load_dotenv('config.env')
 
+load_dotenv('config.env')
 
 from flask import json, render_template, Flask, request
 from modules.update_counters import get_counter
 from modules.get_environmentals import app_ip, app_port, app_ssl, app_ssl_cert, app_ssl_key
 
-
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
