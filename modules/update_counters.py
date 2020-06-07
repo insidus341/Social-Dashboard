@@ -51,14 +51,14 @@ def update_counter():
 
 
 def get_stored_data():
-    with open(app_root + "storage/counter_data.json", "r") as file:
+    with open(app_root + "/storage/counter_data.json", "r") as file:
         stored_counter_data_json = json.load(file)
 
     return stored_counter_data_json
 
 
 def set_stored_data(counters):
-    with open(app_root + "storage/counter_data.json", "w") as file:
+    with open(app_root + "/storage/counter_data.json", "w") as file:
         json.dump(counters, file)
 
 

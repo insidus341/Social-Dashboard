@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-
 load_dotenv('config.env')
 
 from flask import json, render_template, Flask, request

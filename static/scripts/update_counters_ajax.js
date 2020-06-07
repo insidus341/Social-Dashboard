@@ -26,8 +26,9 @@ $(document).ready(function(){
         },
         complete: function() {
        // Schedule the next request when the current one's complete
-       setInterval(update_counters_ajax, 60000); // The interval set to 60 seconds
+       setTimeout(update_counters_ajax, 5000); // The interval set to 60 seconds
      }
     });
   };
 })
+
