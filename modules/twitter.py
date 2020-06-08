@@ -8,16 +8,16 @@ def get_twitter_follower_count():
     auth.set_access_token(twitter_api_token, twitter_api_token_secret)
 
     twitter_api = tweepy.API(auth)
-    user = twitter_api.get_user(twitter_username)
-
-    id_str = user.id_str
 
     try:
-        response = twitter_api.followers(id_str)
-        my_followers = len(response)
+        print('Getting Twitter Followers')
+        response = twitter_api.get_user(twitter_username)
+        my_followers = response.followers_count
         return my_followers
 
     except Exception as e:
+        print("Twitter Failure")
+        print(e)
         raise Exception
 
 

@@ -13,6 +13,7 @@ def get_youtube_subscriber_count():
     }
 
     try:
+        print("Getting YouTube Subscribers")
         response = request.get(url).json()
         subscriber_count = response['items'][0]['statistics']['subscriberCount']
 

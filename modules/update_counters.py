@@ -23,6 +23,7 @@ def get_counter():
             return get_stored_data()
 
         except Exception as e:
+            print("Unable to get new data")
             return get_stored_data()
 
     else:
@@ -60,6 +61,7 @@ def get_stored_data():
 def set_stored_data(counters):
     with open(app_root + "/storage/counter_data.json", "w") as file:
         json.dump(counters, file)
+    print("Storage updated")
 
 
 def calculate_percentage(current, target):
