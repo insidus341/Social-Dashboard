@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-load_dotenv('config.env')
+load_dotenv('.env')
 
 from flask import json, render_template, Flask, request
 from modules.update_counters import get_counter
